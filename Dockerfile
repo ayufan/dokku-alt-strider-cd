@@ -12,6 +12,7 @@ RUN nave usemain stable
 RUN useradd -m strider
 RUN git clone https://github.com/Strider-CD/strider.git /src -b 1.4.5
 WORKDIR /src
+RUN apt-get install -y nodejs npm
 RUN (rm -rf node_modules || exit 0) && npm install
 
 # Configure Strider-CD
