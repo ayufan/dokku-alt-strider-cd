@@ -10,14 +10,14 @@ RUN nave usemain stable
 
 # Install Strider-CD
 RUN useradd -m strider
-RUN git clone https://github.com/Strider-CD/strider.git /src -b master
+RUN git clone https://github.com/Strider-CD/strider.git /src -b v1.5.0
 WORKDIR /src
 RUN apt-get install -y nodejs npm
 RUN ln -s nodejs /usr/bin/node
 RUN (rm -rf node_modules || exit 0) && npm install
 
 # Install plugins
-RUN npm install strider-slack strider-gitlab strider-ssh-deploy strider-env strider-python strider-webhooks strider-simple-worker strider-git strider-dot-net strider-simple-runner strider-sauce strider-email-notifier strider-hipchat strider-build-badge strider-fleet strider-jelly strider-local strider-runner-core strider-extension-loader
+# RUN npm install strider-slack strider-gitlab strider-ssh-deploy strider-env strider-python strider-webhooks strider-simple-worker strider-git strider-dot-net strider-simple-runner strider-sauce strider-email-notifier strider-hipchat strider-build-badge strider-fleet strider-jelly strider-local strider-runner-core strider-extension-loader
 
 # Configure Strider-CD
 RUN mkdir -p /strider/builds && chown -R strider:strider /strider
