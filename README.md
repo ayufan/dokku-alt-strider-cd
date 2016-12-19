@@ -14,8 +14,8 @@ Install, create and link a mongodb database with:
     dokku mongo:create
     dokku mongo:link strider strider
     #check the MONGO_URL variable for the next steps
-    dokku config:set MONGODB_URL=mongodb://strider:dabde692a0d2fb18577186a02eb9a4e9@dokku-mongo-strider:27017/strider
-    dokku config:set DB_URI=mongodb://strider:dabde692a0d2fb18577186a02eb9a4e9@dokku-mongo-strider:27017/strider
+    dokku config:set strider MONGODB_URL=mongodb://strider:dabde692a0d2fb18577186a02eb9a4e9@dokku-mongo-strider:27017/strider
+    dokku config:set strider DB_URI=mongodb://strider:dabde692a0d2fb18577186a02eb9a4e9@dokku-mongo-strider:27017/strider
 
 Then, clone the repo and link with dokku:
 
